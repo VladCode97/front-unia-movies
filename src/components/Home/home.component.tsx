@@ -1,25 +1,34 @@
 import React from 'react';
+import { ButtonUniaMovie } from '../../Styled-Components/button.style';
 import { FontUniaMovie } from '../../Styled-Components/font.styled';
-import { ContainerHome, ItemHome } from '../../Styled-Components/home.styled';
+import { ContainerHome, ContainerLogin, ItemLogin } from '../../Styled-Components/home.styled';
 
 
 export function HomeComponent() {
   return (
     <ContainerHome>
-      {/* Information  */}
-      <ItemHome backgroundItem="#131313">
+      <ContainerLogin>
+        {/* Login app */}
+        <ItemLogin>
+          <FontUniaMovie fontFamily="'Pacifico', cursive" fontColor="white">UniaM</FontUniaMovie>
+          <ButtonUniaMovie fontFamily="'Pacifico', cursive"
+            buttonBackground="#F04500"
+            buttonBorder="#F04500"
+            fontColor="white"
+            fontSize="25px">
+            Login
+          </ButtonUniaMovie>
+        </ItemLogin>
+        {/* Font discover */}
         <FontUniaMovie
-          fontSize="100px"
-          fontWeight="600"
-          fontPositionLeft="12%"
-          fontPositionTop="10%"
-          fontColor="white"
-        >
-          Unia movie
+          fontColor="white" fontFamily="'Roboto', sans-serif;"
+          fontSize="80px"
+          fontPositionTop="40%"
+          fontPositionLeft="58%"
+          fontWidth="40%">
+          Discover a new world
         </FontUniaMovie>
-      </ItemHome>
-      {/* Movies */}
-      <ItemHome backgroundItem="#000" />
+      </ContainerLogin>
     </ContainerHome>
   )
 }

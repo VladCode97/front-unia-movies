@@ -1,12 +1,18 @@
 import Styled from 'styled-components';
-
+import BakcgroundHome from '../assets/home-background.png';
 
 /**
  * Container
  */
 export const ContainerHome = Styled.div`
-  display: grid;
-  grid-template-columns: 500px 1fr;
+  background: black;
+`;
+
+export const ContainerLogin = Styled.div`
+  background: url(${BakcgroundHome}) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
 `;
 
 /**
@@ -14,16 +20,14 @@ export const ContainerHome = Styled.div`
  */
 export const ItemHome: any = Styled.div`
   background: ${(props: any) => props.backgroundItem};
-  position: relative;
-  height: 100vh;
+  
 `;
 
-export const DecorationHome: any = Styled.div`
+export const ItemLogin = Styled(ItemHome)`
+  display: grid;
+  grid-template-columns: 50px 100px;
+  grid-gap: 100px;
   position: absolute;
-  left: ${(props: any) => (props.decorationPositionLeft) ? props.decorationPositionLeft : 'auto'};
-  top: ${(props: any) => (props.decorationPositionTop) ? props.decorationPositionTop : 'auto'};
-  clip-path: ${(props: any) => props.poligonDecoration};
-  background: ${(props: any) => props.backgroudDecoration};
-  height: 300px;
-  width: 100%;
+  left: 70%;
+  top: 10%;
 `;
