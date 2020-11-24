@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ButtonUniaMovie } from '../../Styled-Components/button.style';
 import { FontUniaMovie } from '../../Styled-Components/font.styled';
 import { ContainerHome, ContainerLogin, ItemLogin } from '../../Styled-Components/home.styled';
-
+import { LoginComponent } from '../Auth/Login/login.component';
+import { useHistory } from 'react-router-dom';
 
 export function HomeComponent() {
+  //Hook of router
+  const history = useHistory();
   return (
     <ContainerHome>
       <ContainerLogin>
         {/* Login app */}
         <ItemLogin>
           <FontUniaMovie fontFamily="'Pacifico', cursive" fontColor="white">UniaM</FontUniaMovie>
-          <ButtonUniaMovie fontFamily="'Pacifico', cursive"
+          <ButtonUniaMovie
+            onClick={() => history.push('/signIn')}
+            fontFamily="'Pacifico', cursive"
             buttonBackground="#F04500"
             buttonBorder="#F04500"
             fontColor="white"
             fontSize="25px">
             Login
-          </ButtonUniaMovie>
+          </ButtonUniaMovie >
         </ItemLogin>
         {/* Font discover */}
         <FontUniaMovie
