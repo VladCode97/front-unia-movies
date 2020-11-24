@@ -1,5 +1,24 @@
+
+@import "~antd/dist/antd.css";
+
 * {
     margin: 0;
     padding: 0;
     font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.form-create {
+    width: 40%;
+    margin: 5% auto;
+    background: white;
+    box-shadow: 20px 20px 60px #d6d6d6,
+    -20px -20px 60px #ffffff;
+    padding: 5%;
+}
+
+.form-create .title-form-create {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bolder;
+    padding-bottom: 10%;
 }
