@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, message } from 'antd';
 import { Store } from 'antd/lib/form/interface';
 import '../../../index.css';
 import { useHistory } from 'react-router-dom';
@@ -21,12 +21,19 @@ export const SignInComponent: FC = () => {
 
 
   const handleValues = async (values: Store) => {
-    console.log(values);
-    await (await fetch('https://api-rest-unia-movie.herokuapp.com/Auth/SignIn', {
+    const response = await (await fetch('https://api-rest-unia-movie.herokuapp.com/Auth/SignIn', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...values })
     })).json()
+    if (response && response !== 'User no found') {
+      localStorage.setItem('user', JSON.stringify(response));
+      setTimeout(() => {
+        history.push('/homeUser');
+      }, 2000);
+    } else {
+      message.info('User no found');
+    }
   }
 
   return (
