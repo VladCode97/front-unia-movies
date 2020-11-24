@@ -1,5 +1,4 @@
-import React, { FC, useState } from 'react';
-import { FontUniaMovie } from '../../../Styled-Components/font.styled';
+import React from 'react';
 import { LoginContainer } from '../../../Styled-Components/login.style';
 import { SignInComponent } from './signin.component';
 

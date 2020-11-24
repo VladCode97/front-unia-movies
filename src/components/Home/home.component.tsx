@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ButtonUniaMovie } from '../../Styled-Components/button.style';
 import { FontUniaMovie } from '../../Styled-Components/font.styled';
 import { ContainerHome, ContainerLogin, ItemLogin } from '../../Styled-Components/home.styled';
-import { LoginComponent } from '../Auth/Login/login.component';
 import { useHistory } from 'react-router-dom';
 
 export function HomeComponent() {

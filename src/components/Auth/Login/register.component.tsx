@@ -21,8 +21,8 @@ export const RegisterComponent: FC = () => {
   const homereDirect = () => history.push('/');
 
   const handleValues = async (values: Store) => {
-    console.log(values);
-    const response = await (await fetch('https://api-rest-unia-movie.herokuapp.com/Auth/Register', {
+    
+    await (await fetch('https://api-rest-unia-movie.herokuapp.com/Auth/Register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...values })

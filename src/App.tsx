@@ -1,6 +1,6 @@
 import React from 'react';
 import { HomeComponent } from './components/Home/home.component';
-import { useHistory, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { LoginComponent } from './components/Auth/Login/login.component';
 import { RegisterComponent } from './components/Auth/Login/register.component';
 

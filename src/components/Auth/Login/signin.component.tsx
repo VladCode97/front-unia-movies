@@ -22,7 +22,7 @@ export const SignInComponent: FC = () => {
 
   const handleValues = async (values: Store) => {
     console.log(values);
-    const response = await (await fetch('https://api-rest-unia-movie.herokuapp.com/Auth/SignIn', {
+    await (await fetch('https://api-rest-unia-movie.herokuapp.com/Auth/SignIn', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...values })
