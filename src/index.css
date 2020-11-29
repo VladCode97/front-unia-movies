@@ -1,37 +1,28 @@
 @import "~antd/dist/antd.css";
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Yanone Kaffeesatz", sans-serif;
+
+.ant-input {
+  background: #31343E !important;
+  border: 1px solid #31343E !important;
+  border-radius: 10px;
+  height: 30px;
+  outline: none;
+  color: white;
+  font-weight: bold;
 }
 
-.form-create {
-  width: 40%;
-  margin: 5% auto;
-  background: white;
-  box-shadow: 20px 20px 60px #d6d6d6, -20px -20px 60px #ffffff;
-  padding: 5%;
+.ant-form-item-explain.ant-form-item-explain-error {
+  color: white;
 }
 
-.form-create .title-form-create {
-  text-align: center;
-  font-size: 60px;
-  font-weight: bolder;
-  padding-bottom: 10%;
+.ant-form label {
+  color: white;
+  font-size: 14px;
+  color: gray;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-.home-user {
-  background: black;
-  height: 100vh;
-}
-
-
-.home-user h1 {
-    font-size: 50px;
-    color: #d6d6d6;
-    text-align: center;
-    position: relative;
-    top: 40%;
-    font-family: 'Pacifico', cursive;
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before  {
+  display: none;
 }

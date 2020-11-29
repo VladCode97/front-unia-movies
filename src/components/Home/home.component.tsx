@@ -25,7 +25,8 @@ export function HomeComponent() {
         </ItemLogin>
         {/* Font discover */}
         <FontUniaMovie
-          fontColor="white" fontFamily="'Roboto', sans-serif;"
+          fontColor="white"
+          fontFamily="'Roboto', sans-serif;"
           fontSize="80px"
           fontPositionTop="40%"
           fontPositionLeft="58%"

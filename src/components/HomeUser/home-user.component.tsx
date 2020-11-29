@@ -1,15 +1,16 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import '../../index.css';
+import { Context } from '../../Common/Context/user.context';
 
-export const HomeUserComponent: FC = (props: any) => {
-  const user = JSON.parse(localStorage.getItem('user') as string);
-  console.log(user);
+export const HomeUserComponent: FC = () => {
+  const { userInformation } = useContext(Context);
+  const response = JSON.parse(userInformation).response;
   return (
     <div className="home-user">
       {
-        (user) && (
+        (userInformation) && (
           <>
-            <h1>Welcome to UniaM, {user.response.name}</h1>
+            <h1>Welcome to UniaM, { response.name}</h1>
           </>
         )
       }
