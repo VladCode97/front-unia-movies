@@ -31,3 +31,17 @@ export const ItemLogin = Styled(ItemHome)`
   left: 70%;
   top: 10%;
 `;
+
+export const HomeUser = Styled.div`
+  height: 100vh;
+  background: rgb(26, 29, 41);
+`;
+
+export const HeaderUser = Styled.header`
+  height: 10vh;
+`;
+
+
+export const ContentUser = Styled.div`
+`;
+
