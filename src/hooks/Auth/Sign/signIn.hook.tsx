@@ -35,14 +35,14 @@ export const useSignIn = () => {
     } catch (e) {
       console.log(e)
     }
-  }, []);
+  }, [setUserInformation, history]);
   /**
    * Logout app
    */
   const Logout = useCallback(() => {
     window.sessionStorage.removeItem('user');
     history.push('/');
-  }, []);
+  }, [history]);
   return {
     SignIn,
     Logout

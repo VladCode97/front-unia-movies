@@ -1,21 +1,16 @@
 import React, { FC } from 'react';
-import { Button, Form, Input, message, Select } from 'antd';
+import { Form, message } from 'antd';
 import { Store } from 'antd/lib/form/interface';
 import '../../../index.css';
 import { useHistory } from 'react-router-dom';
 import { FontUniaMovie } from '../../../Styled-Components/font.styled';
-import { SignInContainer, FormLogin, ContainerButtonLogin, ImageLogin, } from '../../../Styled-Components/login.style';
+import { SignInContainer, FormLogin, ImageLogin, } from '../../../Styled-Components/login.style';
 import { FooterComponent } from '../../Footer/footer.component';
 import ImgRegister from '../../../assets/marvel-studio.png';
 import { useRegister } from '../../../hooks/Auth/Register/register.hook';
 import UserDTO from '../../../Common/DTO/user.dto';
 import { FormRegisterComponent } from './form-register.component';
 
-/**
- * Destructurin object
- */
-const { Item } = Form;
-const { Option, OptGroup } = Select;
 
 export const RegisterComponent: FC = () => {
   //Hook router
