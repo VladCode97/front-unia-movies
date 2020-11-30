@@ -1,8 +1,9 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { MovieContainer, ItemMovie, ImageMovie } from '../../Styled-Components/movies.style';
-import Movies from '../../movies.json';
 import { FontUniaMovie } from '../../Styled-Components/font.styled';
 import { Button, Modal } from 'antd';
+import ReactPlayer from 'react-player';
+import { useMovie } from '../../hooks/Movies/movie.hook';
 
 export const MoviesComponent: FC<any> = () => {
   //State modal
@@ -11,11 +12,17 @@ export const MoviesComponent: FC<any> = () => {
   const showModal = () => setModal(!modal);
   const handleCancel = () => setModal(!modal);
 
-  const movies = Movies;
+  //Hook movies
+  const { getMovies, movies } = useMovie();
+
+  useEffect(() => {
+    getMovies();
+  }, [])
+
   return (
     <MovieContainer>
       {
-        (movies.length !== 0 && movies) && (
+        (movies && movies.length !== 0) && (
           movies.map((movie, index) => {
             return (
               <ItemMovie key={index}>
@@ -39,13 +46,26 @@ export const MoviesComponent: FC<any> = () => {
                   visible={modal}
                   onCancel={handleCancel}
                 >
-                  <p>
+                  <FontUniaMovie fontSize="55px"
+                    fontFamily="'Pacifico', cursive"
+                  >
+                    {movie.name_movie}
+                  </FontUniaMovie>
+                  <FontUniaMovie
+                    style={{ fontWeight: '300', padding: '5%' }}
+                    fontSize="12px"
+                    fontFamily="'Roboto', sans-serif;"
+                  >
                     {movie.description_movie}
-                  </p>
-                  <video controls={true}>
-                    <source src="https://youtu.be/luai0p0y2zE" type="video/mp4">
-                    </source>
-                  </video>
+                  </FontUniaMovie>
+                  <ReactPlayer
+                    style={{ margin: 'auto' }}
+                    url="https://youtu.be/luai0p0y2zE"
+                    controls
+                    playbackRate={2}
+                    width="450px"
+                    height="300px"
+                  />
                 </Modal>
               </ItemMovie>
             )
