@@ -17,7 +17,7 @@ export const MoviesComponent: FC<any> = () => {
 
   useEffect(() => {
     getMovies();
-  }, [])
+  }, [getMovies])
 
   return (
     <MovieContainer>

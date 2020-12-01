@@ -18,7 +18,7 @@ export const HomeUserComponent: FC = () => {
       {/* Header */}
       <HeaderUser>
         <Button
-          style={{ position: 'relative', left: '90%', top: '20%' }}
+          style={{ position: 'relative', left: '85%', top: '20%' }}
           type="dashed" ghost
           onClick={Logout}
         >
